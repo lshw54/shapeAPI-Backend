@@ -29,6 +29,9 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new ApiExceptionFilter());
 
+  // Enable CORS
+  app.enableCors();
+
   // reflector
   const reflector = app.get(Reflector);
   app.useGlobalInterceptors(
